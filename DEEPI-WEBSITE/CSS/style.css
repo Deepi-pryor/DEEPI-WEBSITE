@@ -1,116 +1,98 @@
-/*header wave */
+/* header wave */
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-	display: flex;
-	background: #000;
-	min-height: 100vh;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  background: #000;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
-	position: relative;
+  position: relative;
+  background-color: #03a9f4;
+  height: 200px;
 }
 
 .header h2 {
-	color: #fff;
-	font-size: 8em;
-	position: absolute;
-	transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 8em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .header h2:nth-child(1) {
-	color: transparent;
-	-webkit-text-stroke: 2px #03a9f4;
+  color: transparent;
+  -webkit-text-stroke: 2px #03a9f4;
 }
 
 .header h2:nth-child(2) {
-	color: #03a9f4;
-	animation: animate 4s ease-in-out infinite;
+  color: #03a9f4;
+  animation: animate 4s ease-in-out infinite;
 }
 
 @keyframes animate {
-	0%,
-	100% {
-		clip-path: polygon(
-			0% 45%,
-			16% 44%,
-			33% 50%,
-			54% 60%,
-			70% 61%,
-			84% 59%,
-			100% 52%,
-			100% 100%,
-			0% 100%
-		);
-	}
-
-	50% {
-		clip-path: polygon(
-			0% 60%,
-			15% 65%,
-			34% 66%,
-			51% 62%,
-			67% 50%,
-			84% 45%,
-			100% 46%,
-			100% 100%,
-			0% 100%
-		);
-	}
+  0%,
+  100% {
+    clip-path: polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
 }
 
 
-
 /* body and cards */
-
 body {
-    margin: 0;
-    padding: 0;
-  }
+  margin: 0;
+  padding: 0;
+}
 
-  
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 20px;
-    padding: 0 20px;
-  }
-  
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: calc(33.33% - 40px);
-    max-width: 300px;
-    padding: 20px;
-    background-color: #fff;
-    text-align: center;
-    text-decoration: none;
-    color: #000;
-    font-family: Arial, sans-serif;
-    margin: 10px;
-    display: flex;
-    flex-direction: column; /* Set the card content in a vertical layout */
-    height: 100%; /* Add this property to ensure cards have the same height */
-  }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  }
-  
-  h1 {
-    font-size: 24px;
-  }
-  
-  p {
-    font-size: 16px;
-  }
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: calc(33.33% - 40px);
+  max-width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  /* Set the card content in a vertical layout */
+  height: 100%;
+  /* Add this property to ensure cards have the same height */
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+}
