@@ -44,9 +44,13 @@ button:hover {
 /* Your existing styles */
 
 /* New styles for the "Go Back" button */
-.go-back-button {
-    display: block;
+.go-back-container {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
+}
+
+.go-back-button {
     text-align: center;
     font-size: 16px;
     color: #333;
