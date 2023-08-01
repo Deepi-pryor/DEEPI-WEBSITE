@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Calculator</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="calculator-container">
-        <div>
-            <input type="text" id="display" disabled>
-        </div>
+        <!-- Your calculator content here -->
+        <input type="text" id="display" disabled>
         <div>
             <button onclick="appendToDisplay('1')">1</button>
             <button onclick="appendToDisplay('2')">2</button>
@@ -34,6 +33,7 @@
             <button onclick="appendToDisplay('/')">/</button>
         </div>
     </div>
+    <button class="go-back-button" onclick="goToIndex()">Go Back</button>
 
     <script src="calculator.js"></script>
 </body>

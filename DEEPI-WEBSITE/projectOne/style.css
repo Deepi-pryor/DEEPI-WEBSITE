@@ -39,3 +39,19 @@ button {
 button:hover {
     background-color: #e0e0e0;
 }
+
+/* Your existing styles */
+
+
+.go-back-button {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+}
+
+.go-back-button:hover {
+    color: #555;
+}

@@ -16,3 +16,7 @@ function calculate() {
         display.value = 'Error';
     }
 }
+
+function goToIndex() {
+    window.location.href = '../index.html';
+}
