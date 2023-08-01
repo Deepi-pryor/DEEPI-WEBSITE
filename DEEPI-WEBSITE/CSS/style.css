@@ -10,19 +10,21 @@
 
 body {
   display: flex;
-  background: #000;
+  background: #fff; /* Set the background to white */
   min-height: 100vh;
   align-items: center;
   justify-content: center;
 }
 
-.header {
+.header-wave {
   position: relative;
   background-color: #03a9f4;
   height: 200px;
+  width: 100%; /* Add this to stretch the wave to full width */
+  overflow: hidden; /* Hide any overflowing elements */
 }
 
-.header h2 {
+.header-wave h1 {
   color: #fff;
   font-size: 8em;
   position: absolute;
@@ -31,14 +33,19 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.header h2:nth-child(1) {
+.header-wave h1::before {
+  content: "Deepi's Website"; /* Add the text content here to avoid overlapping */
   color: transparent;
   -webkit-text-stroke: 2px #03a9f4;
 }
 
-.header h2:nth-child(2) {
+.header-wave h1::after {
+  content: "Deepi's Website"; /* Add the text content here to avoid overlapping */
   color: #03a9f4;
   animation: animate 4s ease-in-out infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 @keyframes animate {
@@ -50,7 +57,6 @@ body {
     clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
   }
 }
-
 
 /* body and cards */
 body {
