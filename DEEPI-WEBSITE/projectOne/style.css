@@ -16,10 +16,12 @@ body {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    width: 20%; /* Set the width to 20% of the screen */
+    min-width: 250px; /* Set a minimum width to avoid the calculator becoming too small */
 }
 
 input[type="text"] {
-    width: 220px;
+    width: 100%; /* Take up the full width of the container */
     height: 40px;
     font-size: 20px;
     text-align: right;
@@ -27,7 +29,7 @@ input[type="text"] {
 }
 
 button {
-    width: 50px;
+    width: 100%; /* Take up the full width of the container */
     height: 50px;
     font-size: 20px;
     margin: 5px;
@@ -42,7 +44,7 @@ button:hover {
 
 /* Your existing styles */
 
-
+/* New styles for the "Go Back" button */
 .go-back-button {
     display: block;
     margin-top: 20px;
