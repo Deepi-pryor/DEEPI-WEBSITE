@@ -1,3 +1,16 @@
+/* Common styles */
+body {
+  background-color: #171717;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  color: rgb(200, 200, 200);
+  overflow: hidden;
+  letter-spacing: 2px;
+}
+
+/* Header */
 .header {
   padding: 60px;
   text-align: center;
@@ -6,52 +19,354 @@
   font-size: 30px;
 }
 
-body {
+/* Project Cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: calc(33.33% - 40px);
+  max-width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  /* Set the card content in a vertical layout */
+  height: 100%;
+  /* Add this property to ensure cards have the same height */
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+}
+
+/* Portfolio Showcase */
+.portfolio-title {
+  position: absolute;
+  top: max(5%, 80px);
+  left: 50%;
+  transform: translateX(-50%);
+  h1 {
     margin: 0;
-    padding: 0;
+    color: rgb(200, 200, 200);
+    font-family: 'Bebas Neue';
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    /* 58px */
+    letter-spacing: 10.73px;
   }
-  
-  .header {
-    padding: 60px;
-    text-align: center;
-    background: #1abc9c;
-    color: white;
-    font-size: 30px;
+  h2 {
+    margin: 0;
+    color: rgb(200, 200, 200);
+    font-family: 'Nunito';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 100%;
+    /* 22px */
+    letter-spacing: 8px;
   }
-  
+}
+
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  position: flex;
+  z-index: 99;
+  .nav-container {
+    display: flex;
+    padding: 32px 42px;
+    :first-child {
+      margin-right: auto;
+    }
+    p,
+    a,
+    i {
+      margin: 0;
+      text-decoration: none;
+    }
+  }
+}
+
+.portfolio-details {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  position: flex;
+  z-index: 99;
+  font-size: 10px;
+  .portfolio-details-container {
+    display: flex;
+    padding: 16px 42px;
+    :first-child {
+      margin-right: auto;
+    }
+    p,
+    a,
+    i {
+      margin: 0;
+      text-decoration: none;
+    }
+  }
+}
+
+/* Card Box and Images */
+.card-box-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0.2;
+  z-index: -1;
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    background-position: center;
+    background-size: cover;
+    filter: blur(10px);
+    scale: 1.1;
+  }
+}
+
+.card-box {
+  width: 100vw;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   .card-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 20px;
-    padding: 0 20px;
+    flex-wrap: nowrap;
+    width: fit-content;
+    gap: 32px;
+    width: 100%;
+    justify-content: center;
+    padding: 16px;
+    .card {
+      width: 64px;
+      height: 420px;
+      overflow: hidden;
+      background-color: black;
+      position: relative;
+      border-radius: 16px;
+      cursor: pointer;
+      -webkit-box-shadow: 0px 9px 21px -5px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 9px 21px -5px rgba(0, 0, 0, 0.2);
+    }
+    .card-info {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      left: 0;
+      color: rgb(200, 200, 200);
+      opacity: 0;
+      padding: 24px 0 0 24px;
+      width: 200px;
+      transform: translateX(-300px);
+      h1 {
+        margin: 0;
+        font-family: 'Bebas Neue', sans-serif;
+        line-height: 0.9;
+        font-size: 29px;
+        opacity: 0.8;
+      }
+      p {
+        margin: 0;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 200;
+        font-size: 14px;
+        opacity: 0.8;
+      }
+    }
+    .card-icon {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      svg {
+        width: 16px;
+        height: 16px;
+        margin: 12px 16px;
+      }
+    }
+    .card-bg {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+      opacity: 0.4;
+    }
+    .card-title-container {
+      width: calc(100% - 48px);
+      height: 100%;
+      color: rgb(200, 200, 200);
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      position: absolute;
+      z-index: 9;
+      margin-left: 24px;
+      margin-right: 24px;
+      .card-title {
+        width: 100%;
+        max-width: 900px;
+        padding-bottom: 32px;
+        opacity: 0;
+        transform: translate(0px, 50px);
+        h1,
+        h2,
+        p {
+          margin: 0;
+        }
+        h1 {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 100px;
+          line-height: 0.82;
+        }
+        h2 {
+          font-family: 'Nunito', sans-serif;
+          font-weight: 300;
+          font-size: 18px;
+          margin-bottom: 8px;
+        }
+        p {
+          font-family: 'Nunito', sans-serif;
+          font-weight: 200;
+          font-size: 20px;
+        }
+      }
+    }
   }
-  
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: calc(33.33% - 40px);
-    max-width: 300px;
-    padding: 20px;
-    background-color: #fff;
-    text-align: center;
-    text-decoration: none;
-    color: #000;
-    font-family: Arial, sans-serif;
-    margin: 10px;
+}
+
+/* Portfolio Content */
+.portfolio-content-box {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 436px;
+  height: 100vh;
+  .portfolio-content {
+    width: 100%;
+    max-width: 900px;
     display: flex;
-    flex-direction: column; /* Set the card content in a vertical layout */
-    height: 100%; /* Add this property to ensure cards have the same height */
+    flex-direction: column;
+    gap: 64px;
+    overflow-y: auto;
+    height: calc(100vh - 436px);
+    opacity: 0;
+    transform: translate(0px, 400px);
+    padding-right: 24px;
+    margin-left: 40px;
+    margin-right: 16px;
+    > :first-child {
+      margin-top: 64px;
+    }
+    > :last-child {
+      margin-bottom: 64px;
+    }
+    .portfolio-container {
+      display: flex;
+      gap: 32px;
+      @media (max-width: 960px) {
+        flex-wrap: wrap;
+        gap: 64px;
+      }
+    }
+    .portfolio-section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 60px;
+      font-family: 'Bebas Neue', sans-serif;
+      line-height: 1;
+    }
+    p {
+      margin: 0;
+      font-weight: 200;
+    }
   }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Portfolio Button */
+.portfolio-button-round {
+  color: rgb(200, 200, 200);
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(10px);
+  padding: 4px 16px;
+  border: 1px solid white;
+  border-radius: 16px;
+  display: flex;
+  gap: 6px;
+  letter-spacing: 2px;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
   }
-  
-  h1 {
-    font-size: 24px;
+  svg {
+    margin: auto 0px;
   }
-  
-  p {
-    font-size: 16px;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  /* width */
+  &::-webkit-scrollbar {
+    width: 4px;
   }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 32px;
+    cursor: pointer;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+}
