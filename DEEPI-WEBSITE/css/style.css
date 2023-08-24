@@ -248,7 +248,7 @@ textarea {
 
 .about {
   background: white;
-  color: #a0c315; }
+  color:black; }
   .about__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
