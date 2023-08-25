@@ -247,8 +247,8 @@ textarea {
     text-align: center; }
 
 .about {
-  background: white;
-  color:black; }
+  background: black;
+  color:white; }
   .about__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
