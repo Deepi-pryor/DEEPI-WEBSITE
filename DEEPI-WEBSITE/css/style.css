@@ -809,26 +809,32 @@ textarea {
   }
   
   .wave h2 {
-    color: #d83535;
-    position: relative;
-    margin: 0;
-    display: block; /* Maintain the stacking */
+      position: relative;
+      margin: 0;
+      display: block; /* Maintain the stacking */
+      font-size: 0; /* Hide the original text */
   }
   
-  .wave h2:nth-child(1) {
+  .wave h2::before,
+  .wave h2::after {
+      content: attr(data-text); /* Use data-text attribute for the content */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+  
+  .wave h2::before {
       color: transparent;
       -webkit-text-stroke: 2px #3ff403;
-      position: relative;
-      margin: 0;
-      display: block;
+      z-index: 1; /* Adjust the z-index to layer properly */
   }
   
-  .wave h2:nth-child(2) {
+  .wave h2::after {
       color: #f403dc;
       animation: wave-animate 4s ease-in-out infinite;
-      position: relative;
-      margin: 0;
-      display: block;
+      z-index: 2; /* Adjust the z-index to layer properly */
   }
     @keyframes wave-animate {
       0%,
