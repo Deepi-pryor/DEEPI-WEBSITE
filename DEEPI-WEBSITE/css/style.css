@@ -782,6 +782,8 @@ textarea {
       position: relative;
     }
     .waviy span {
+      text-align: center;
+  
       position: relative;
       display: inline-block;
       font-size: 40px;
