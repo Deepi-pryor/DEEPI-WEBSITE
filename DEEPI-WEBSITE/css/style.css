@@ -433,11 +433,8 @@ textarea {
         width: 100%; } }
 
 .project-cs-hero {
-  color: #fff;
-  background: linear-gradient(to right, rgba(0, 98, 185, 0.8), rgba(0, 98, 185, 0.8)), url(../../assets/svg/common-bg.svg);
-  background-size: cover;
-  background-position: center;
-  position: relative; }
+  background: black;
+  color:white; }
   @media only screen and (max-width: 37.5em) {
     .project-cs-hero {
       height: unset;
