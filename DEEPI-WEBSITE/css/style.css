@@ -305,6 +305,11 @@ textarea {
               .tiktok__content-details-para:last-child {
                 margin-bottom: 4rem; }
 
+        .projects {
+          background: black;
+          color:white;
+         }
+        
 .projects__row {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
