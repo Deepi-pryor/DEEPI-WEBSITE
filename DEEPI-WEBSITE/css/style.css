@@ -234,12 +234,13 @@ textarea {
     .home-hero {
       height: unset;
       min-height: unset; } }
-  .home-hero__socials {
-    position: absolute;
-    top: 50%;
-    border: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    transform: translateY(-50%); }
+      .home-hero__socials {
+        position: relative; /* Change to relative positioning */
+        transform: none; /* Remove translateY */
+        text-align: center; /* Center the social icons */
+        margin-top: 1rem; /* Add some margin to separate from info */
+      }
+    
      
   .home-hero__mouse-scroll-cont {
     position: absolute;
@@ -271,16 +272,20 @@ textarea {
     width: 92%; }
     @media only screen and (max-width: 37.5em) {
       .home-hero__content {
-        padding: 19rem 0 13rem 0;
+        padding: 19rem 0 6rem 0; /* Adjusted padding */
         margin: auto;
         position: static;
-        transform: translate(0, 0); } }
-  .home-hero__info {
-    margin: 3rem auto 0 auto;
-    max-width: 80rem; }
-  .home-hero__cta {
-    margin-top: 5rem;
-    text-align: center; }
+        transform: translate(0, 0);
+      }
+        .home-hero__info {
+          margin: 3rem auto;
+          max-width: 80rem;
+        }
+        
+        .home-hero__cta {
+          margin-top: 2rem;
+          text-align: center;
+        }
 
 .about {
   background: black;
