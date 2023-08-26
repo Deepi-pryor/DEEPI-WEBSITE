@@ -802,10 +802,12 @@ textarea {
     /* text wave animation for links section */
     .wave {
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
+      display: block;
+      font-size: 4rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      margin-bottom: 3.5rem;
     }
 
     .wave-center {
@@ -818,7 +820,6 @@ textarea {
     
     .wave h2 {
       color: #fff;
-      font-size: 4em;
       position: absolute;
       transform: translate(-50%, -50%);
     }
