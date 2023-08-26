@@ -805,7 +805,15 @@ textarea {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: 100%;
+    }
+
+    .wave-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh; /* Set the container height to the full viewport height */
     }
     
     .wave h2 {
