@@ -798,27 +798,28 @@ textarea {
       }
     }
 
-
-  /* text wave animation for links section */
+/* text wave animation for links section */
 .wave {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px; /* Adjust the height as needed */
+  height: 150px; /* Adjust the height as needed */
 }
 
 .wave h2 {
   color: #fff;
   font-size: 4em; /* Adjust the font size as needed */
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   margin: 0; /* Remove default margin */
 }
 
 .wave h2:nth-child(1) {
   color: transparent;
-  -webkit-text-stroke: 1px #03a9f4; /* Adjust the text stroke size as needed */
+  -webkit-text-stroke: 2px #03a9f4; /* Adjust the text stroke size as needed */
 }
 
 .wave h2:nth-child(2) {
@@ -827,8 +828,7 @@ textarea {
 }
 
 @keyframes wave-animate {
-  0%,
-  100% {
+  0%, 100% {
     clip-path: polygon(
       0% 45%,
       16% 44%,
