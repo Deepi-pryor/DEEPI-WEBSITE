@@ -802,6 +802,10 @@ textarea {
     /* text wave animation for links section */
     .wave {
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
     
     .wave h2 {
