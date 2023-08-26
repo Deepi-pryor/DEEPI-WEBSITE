@@ -805,14 +805,14 @@ textarea {
       text-transform: uppercase;
       letter-spacing: 3px;
       text-align: center;
-
       margin: auto; /* Add auto margins to horizontally center */
   }
   
   .wave h2 {
-      color: #fff;
-
-      margin: 0;
+    color: #fff;
+    position: relative;
+    margin: 0;
+    display: block; /* Maintain the stacking */
   }
   
   .wave h2:nth-child(1) {
