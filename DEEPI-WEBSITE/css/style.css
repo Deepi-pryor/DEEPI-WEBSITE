@@ -818,7 +818,7 @@ textarea {
     
     .wave h2:nth-child(2) {
       color: #03a9f4;
-      animation: animate 4s ease-in-out infinite;
+      animation: wave-animate 4s ease-in-out infinite;
     }
 
     @keyframes wave-animate {
