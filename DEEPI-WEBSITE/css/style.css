@@ -276,7 +276,8 @@ textarea {
 
 
         .tiktok {
-          background: #fafafa; }
+          background: black;
+          color:white; }
           .tiktok__content {
             display: grid;
             grid-template-columns: 1fr 1fr;
