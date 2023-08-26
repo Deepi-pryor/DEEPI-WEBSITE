@@ -806,6 +806,8 @@ textarea {
     
     .wave h2 {
       color: #fff;
+      font-size: 4em;
+      position: absolute;
       transform: translate(-50%, -50%);
     }
     
