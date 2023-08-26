@@ -89,8 +89,8 @@ textarea {
 
 /* The typing effect */
 @keyframes typing {
-  0% { width: 0 }
-  100% { width: 100% }
+  from { width: 0 }
+  to { width: calc(100% + 0.15em) }
 }
 
 /* The typewriter cursor effect */
