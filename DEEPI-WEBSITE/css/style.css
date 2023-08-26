@@ -778,10 +778,10 @@ textarea {
 
 
     /* text flip animation for about me */
-    .waviy {
+    .flips {
       position: relative;
     }
-    .waviy span {
+    .flips span {
       text-align: center;
   
       position: relative;
