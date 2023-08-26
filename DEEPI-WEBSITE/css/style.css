@@ -202,8 +202,7 @@ textarea {
     border: 2px solid #d23e3e;
     border-left: 2px solid #0eda5c;
     transform: translateY(-50%); }
-      .home-hero__socials {
-        display: none; } 
+  
   .home-hero__mouse-scroll-cont {
     position: absolute;
     bottom: 3%;
