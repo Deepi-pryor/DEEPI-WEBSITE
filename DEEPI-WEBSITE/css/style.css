@@ -805,7 +805,7 @@ textarea {
       text-transform: uppercase;
       letter-spacing: 3px;
       text-align: center;
-      display: block; /* Change display to block */
+
       margin: auto; /* Add auto margins to horizontally center */
   }
   
