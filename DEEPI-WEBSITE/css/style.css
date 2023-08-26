@@ -776,24 +776,32 @@ textarea {
     top: 27px; } }
 
 
+/* Center the waviy animation */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this value to control the centering */
+}
 
-    /* text flip animation for about me */
-    .waviy {
-      position: relative;
-    }
-    .waviy span {
-      text-align: center;
-  
-      position: relative;
-      display: inline-block;
-      font-size: 40px;
-      color: #fff;
-      text-transform: uppercase;
-      animation: flip 2s infinite;
-      animation-delay: calc(.2s * var(--i))
-    }
-    @keyframes flip {
-      0%,80% {
-        transform: rotateY(360deg) 
-      }
-    }
+/* Rest of your existing CSS */
+.waviy {
+  position: relative;
+}
+
+.waviy span {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  font-size: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  animation: flip 2s infinite;
+  animation-delay: calc(.2s * var(--i));
+}
+
+@keyframes flip {
+  0%, 80% {
+    transform: rotateY(360deg);
+  }
+}
