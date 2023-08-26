@@ -199,8 +199,8 @@ textarea {
   .home-hero__socials {
     position: absolute;
     top: 50%;
-    border: 2px solid #eee;
-    border-left: 2px solid #eee;
+    border: 2px solid #d23e3e;
+    border-left: 2px solid #0eda5c;
     transform: translateY(-50%); }
       .home-hero__socials {
         display: none; } 
@@ -220,7 +220,7 @@ textarea {
     padding: 1.2rem;
     transition: background .3s; }
     .home-hero__social-icon-link:hover {
-      background: rgba(255, 255, 255, 0.1); }
+      background: rgba(187, 20, 168, 0.1); }
     .home-hero__social-icon-link--bd-none {
       border-bottom: 0; }
   .home-hero__social-icon {
