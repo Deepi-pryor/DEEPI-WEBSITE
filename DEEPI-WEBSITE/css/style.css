@@ -199,10 +199,11 @@ textarea {
   .home-hero__socials {
     position: absolute;
     top: 50%;
-    border: 2px solid #d23e3e;
-    border-left: 2px solid #0eda5c;
+    border: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
     transform: translateY(-50%); }
-  
+      .home-hero__socials {
+        display: flex; } 
   .home-hero__mouse-scroll-cont {
     position: absolute;
     bottom: 3%;
