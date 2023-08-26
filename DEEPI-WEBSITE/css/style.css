@@ -809,7 +809,7 @@ textarea {
   }
   
   .wave h2 {
-    color: #fff;
+    color: #d83535;
     position: relative;
     margin: 0;
     display: block; /* Maintain the stacking */
@@ -817,11 +817,11 @@ textarea {
   
   .wave h2:nth-child(1) {
       color: transparent;
-      -webkit-text-stroke: 2px #03a9f4;
+      -webkit-text-stroke: 2px #3ff403;
   }
   
   .wave h2:nth-child(2) {
-      color: #03a9f4;
+      color: #f403dc;
       animation: wave-animate 4s ease-in-out infinite;
   }
     @keyframes wave-animate {
