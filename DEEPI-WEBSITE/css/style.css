@@ -801,31 +801,29 @@ textarea {
 
     /* text wave animation for links section */
     .wave {
-   
-     
       font-size: 4rem;
       text-transform: uppercase;
       letter-spacing: 3px;
       text-align: center;
-
-    }
-    
-    .wave h2 {
+      display: block; /* Change display to block */
+      margin: auto; /* Add auto margins to horizontally center */
+  }
+  
+  .wave h2 {
       color: #fff;
-      position: absolute;
-      transform: translate(-50%, -50%);
-    }
-    
-    .wave h2:nth-child(1) {
+      position: relative;
+      margin: 0;
+  }
+  
+  .wave h2:nth-child(1) {
       color: transparent;
       -webkit-text-stroke: 2px #03a9f4;
-    }
-    
-    .wave h2:nth-child(2) {
+  }
+  
+  .wave h2:nth-child(2) {
       color: #03a9f4;
       animation: wave-animate 4s ease-in-out infinite;
-    }
-    
+  }
     @keyframes wave-animate {
       0%,
       100% {
