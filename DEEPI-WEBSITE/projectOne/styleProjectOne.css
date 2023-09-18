@@ -112,8 +112,15 @@ h1 {
   border: none;
 }
 
+.timeline .event:before,
+.timeline .event:after {
+  position: absolute;
+  display: block;
+  top: 0;
+}
+
 .timeline .event:before {
-  left: calc(var(--date) * -1);
+  left: calc(((var(--date) * 0.6) + var(--spacing) + var(--line) + var(--dot) + (var(--dotborder) * 2)) * 1.5 * -1);
   color: rgba(255, 255, 255, 0.4);
   content: attr(data-date);
   text-align: right;
@@ -121,23 +128,15 @@ h1 {
   font-size: 0.9em;
   min-width: var(--date);
   font-family: var(--font-title);
-  position: absolute;
-  top: 0;
-}
-
-.timeline .event h3 {
-  display: inline;
-  margin-left: 20px; /* Adjust this value as needed */
 }
 
 .timeline .event:after {
-  content: "";
-  position: absolute;
-  left: calc(-1 * (var(--dot) / 2 + var(--dotborder)));
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--color-primary);
+  box-shadow: 0 0 0 var(--dotborder) rgba(0, 79, 252, 1);
+  left: calc(var(--spacing) + var(--line) + (var(--dot) * 0.35) * -1);
+  background: rgba(38, 40, 42, 0.05);
   border-radius: 50%;
   height: var(--dot);
   width: var(--dot);
+  content: "";
+  top: 5px;
 }
