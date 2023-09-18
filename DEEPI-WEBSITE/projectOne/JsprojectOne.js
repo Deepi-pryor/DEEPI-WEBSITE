@@ -56,5 +56,52 @@ function generateTimelineItems(data) {
     });
 }
 
+// Function to sort movies by release date
+function sortMoviesByReleaseDate() {
+    const timeline = document.querySelector('.timeline');
+    const movies = Array.from(timeline.querySelectorAll('.movie'));
+
+    movies.sort((a, b) => {
+        const dateA = a.getAttribute('data-date');
+        const dateB = b.getAttribute('data-date');
+        return dateA.localeCompare(dateB);
+    });
+
+    // Clear the timeline and append sorted movies
+    timeline.innerHTML = '';
+    movies.forEach(movie => {
+        timeline.appendChild(movie);
+    });
+}
+
+// Function to sort movies alphabetically by title
+function sortMoviesByTitle() {
+    const timeline = document.querySelector('.timeline');
+    const movies = Array.from(timeline.querySelectorAll('.movie'));
+
+    movies.sort((a, b) => {
+        const titleA = a.querySelector('h3').textContent;
+        const titleB = b.querySelector('h3').textContent;
+        return titleA.localeCompare(titleB);
+    });
+
+    // Clear the timeline and append sorted movies
+    timeline.innerHTML = '';
+    movies.forEach(movie => {
+        timeline.appendChild(movie);
+    });
+}
+
+// Call the function to generate timeline items
+generateTimelineItems(moviesData);
+
+// Add event listeners to the sorting buttons
+const sortReleaseDateButton = document.getElementById('sort-release-date');
+const sortTitleButton = document.getElementById('sort-title');
+
+sortReleaseDateButton.addEventListener('click', sortMoviesByReleaseDate);
+sortTitleButton.addEventListener('click', sortMoviesByTitle);
+
+
 // Call the function to generate timeline items
 generateTimelineItems(moviesData);
