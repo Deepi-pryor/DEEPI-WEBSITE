@@ -1,4 +1,3 @@
-/* Import */
 @import url('https://fonts.googleapis.com/css?family=Chivo:300,300i,400,400i,700,700i,900,900i|Saira+Extra+Condensed:100,200,300,400,500,600,700,800|Saira:100,200,300,400,500,600,700,800');
 
 /* Variables */
@@ -100,11 +99,32 @@ h1 {
 }
 
 .timeline .event {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-bottom: calc(var(--spacing) * 0.5);
+  margin-bottom: var(--spacing);
   position: relative;
 }
 
+.timeline .event:last-of-type {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border: none;
+}
+
+.timeline .event:before,
+.timeline .event:after {
+  box-shadow: 0 0 0 var(--dotborder) rgba(0, 79, 252, 1);
+  left: calc(var(--date) + var(--line) + (var(--dot) * 0.35) * -1); /* Updated left value */
+  background: rgba(38, 40, 42, 0.05);
+  border-radius: 50%;
+  height: var(--dot);
+  width: var(--dot);
+  content: "";
+  top: 5px;
+}
+
 .timeline .event:before {
-  left: calc(-1 * (var(--date) + var(--spacing) + var(--line)));
+  left: calc(((var(--date) * 0.6) + var(--spacing) + var(--line) + var(--dot) + (var(--dotborder) * 2)) * 1.5 * -1);
   color: rgba(255, 255, 255, 0.4);
   content: attr(data-date);
   text-align: right;
@@ -112,18 +132,15 @@ h1 {
   font-size: 0.9em;
   min-width: var(--date);
   font-family: var(--font-title);
-  position: absolute;
-  top: 0;
 }
 
 .timeline .event:after {
   box-shadow: 0 0 0 var(--dotborder) rgba(0, 79, 252, 1);
-  left: calc(-1 * (var(--line) + (var(--dot) * 0.35)));
+  left: calc(var(--date) + var(--line) + (var(--dot) * 0.35) * -1); /* Updated left value */
   background: rgba(38, 40, 42, 0.05);
   border-radius: 50%;
   height: var(--dot);
   width: var(--dot);
   content: "";
-  top: calc(50% - var(--dot) / 2);
-  position: absolute;
+  top: 5px;
 }
