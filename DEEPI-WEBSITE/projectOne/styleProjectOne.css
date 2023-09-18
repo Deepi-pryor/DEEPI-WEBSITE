@@ -97,8 +97,8 @@ h1 {
   letter-spacing: 1.5px;
   font-weight: 400;
   font-size: 1.4em;
-  padding-left: calc(var(--dot) + var(--dotborder) + var(--line) + var(--spacing) * 1.5);
 }
+
 
 .timeline .event {
   border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
@@ -130,6 +130,14 @@ h1 {
   min-width: var(--date);
   font-family: var(--font-title);
 }
+
+
+.timeline .event h3 {
+  display: inline; /* Make the h3 text inline */
+  position: relative;
+  margin-left: calc(var(--dot) + var(--dotborder) + var(--line) + var(--spacing) * 1.5);
+}
+
 
 .timeline .event:after {
   box-shadow: 0 0 0 var(--dotborder) rgba(0, 79, 252, 1);
