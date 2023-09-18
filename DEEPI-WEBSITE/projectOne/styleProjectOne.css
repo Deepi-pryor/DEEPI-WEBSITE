@@ -1,17 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Chivo:300,300i,400,400i,700,700i,900,900i|Saira+Extra+Condensed:100,200,300,400,500,600,700,800|Saira:100,200,300,400,500,600,700,800');
-
 /* Variables */
 :root {
   --background: #252827;
   --color-primary: #004ffc;
   --color-light: white;
   --color-dim: #6c6d6d;
-  --spacing: 50px;
+  --spacing: 5vw; /* Adjusted spacing for responsiveness */
   --radius: 4px;
-  --date: 120px;
-  --dotborder: 4px;
-  --dot: 11px;
-  --line: 4px;
+  --date: 10vw; /* Adjusted date width for responsiveness */
+  --dotborder: 2px; /* Adjusted dot border size for responsiveness */
+  --dot: 3vw; /* Adjusted dot size for responsiveness */
+  --line: 1px; /* Adjusted line size for responsiveness */
   --font-title: 'Saira', sans-serif;
   --font-text: 'Chivo', sans-serif;
 }
@@ -20,10 +18,13 @@
 body {
   background: var(--background);
   font-size: 16px;
+  margin: 0; /* Remove default margin to fill the screen */
+  overflow-x: hidden; /* Prevent horizontal scrolling on small screens */
 }
 
 p {
   font-weight: 300;
+  margin: 0; /* Remove default margin for consistency */
 }
 
 a {
@@ -80,7 +81,7 @@ h1 {
   list-style: none;
   text-align: left;
   font-weight: 100;
-  max-width: 30%;
+  max-width: 100%; /* Make sure it's 100% width on all screens */
 }
 
 .timeline h1 {
@@ -114,7 +115,7 @@ h1 {
 .timeline .event:before,
 .timeline .event:after {
   box-shadow: 0 0 0 var(--dotborder) rgba(0, 79, 252, 1);
-  left: calc(var(--date) + var(--line) + (var(--dot) * 0.35) * -1); /* Updated left value */
+  left: calc(var(--date) + var(--line) + (var(--dot) * 0.35) * -1);
   background: rgba(38, 40, 42, 0.05);
   border-radius: 50%;
   height: var(--dot);
@@ -136,11 +137,22 @@ h1 {
 
 .timeline .event:after {
   box-shadow: 0 0 0 var(--dotborder) rgba(0, 79, 252, 1);
-  left: calc(var(--date) + var(--line) + (var(--dot) * 0.35) * -1); /* Updated left value */
+  left: calc(var(--date) + var(--line) + (var(--dot) * 0.35) * -1);
   background: rgba(38, 40, 42, 0.05);
   border-radius: 50%;
   height: var(--dot);
   width: var(--dot);
   content: "";
   top: 5px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  :root {
+    --spacing: 4vw; /* Adjusted spacing for smaller screens */
+    --date: 8vw; /* Adjusted date width for smaller screens */
+    --dotborder: 1px; /* Adjusted dot border size for smaller screens */
+    --dot: 2.5vw; /* Adjusted dot size for smaller screens */
+    --line: 1px; /* Adjusted line size for smaller screens */
+  }
 }
