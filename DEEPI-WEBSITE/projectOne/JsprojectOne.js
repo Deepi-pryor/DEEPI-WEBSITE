@@ -34,7 +34,10 @@ const moviesData = [
     { name: "Guardians of the Galaxy Vol. 3", releaseDate: "2023", summary: "The Guardians reunite for another cosmic adventure as they face personal and galactic threats." }
 ];
 
-/// Function to generate timeline items based on the sorting mode
+// Declare a variable to store the current sorting mode
+let currentSortingMode = "chronological"; // Default sorting mode
+
+// Function to generate timeline items based on the sorting mode
 function generateTimelineItems(data) {
     const timeline = document.querySelector('.timeline');
     timeline.innerHTML = ''; // Clear the timeline
@@ -59,13 +62,13 @@ function generateTimelineItems(data) {
         });
     } else if (currentSortingMode === "release-date") {
         // Sort and display movies by release date
-        sortMoviesByReleaseDate(data); // Pass data to the sorting function
+        sortMoviesByReleaseDate(data);
     } else if (currentSortingMode === "title-az") {
         // Sort and display movies alphabetically by title (A-Z)
-        sortMoviesByTitleAZ(data); // Pass data to the sorting function
+        sortMoviesByTitleAZ(data);
     } else if (currentSortingMode === "title-za") {
         // Sort and display movies alphabetically by title (Z-A)
-        sortMoviesByTitleZA(data); // Pass data to the sorting function
+        sortMoviesByTitleZA(data);
     }
 }
 
