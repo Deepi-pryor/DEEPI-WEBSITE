@@ -54,6 +54,9 @@ function generateTimelineItems(data) {
 
         timeline.appendChild(listItem);
     });
+
+    // Automatically sort by release date after generating items
+    sortMoviesByReleaseDate();
 }
 
 // Function to sort movies by release date
@@ -73,7 +76,6 @@ function sortMoviesByReleaseDate() {
         timeline.appendChild(movie);
     });
 }
-
 // Function to sort movies alphabetically by title (A-Z)
 function sortMoviesByTitleAZ() {
     const timeline = document.querySelector('.timeline');
