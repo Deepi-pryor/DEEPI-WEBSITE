@@ -34,29 +34,42 @@ const moviesData = [
     { name: "Guardians of the Galaxy Vol. 3", releaseDate: "2023", summary: "The Guardians reunite for another cosmic adventure as they face personal and galactic threats." }
 ];
 
-// Function to generate timeline items
+// Flag to keep track of the current display mode
+let chronologicalOrder = true;
+
+// Function to generate timeline items based on the display mode
 function generateTimelineItems(data) {
     const timeline = document.querySelector('.timeline');
+    timeline.innerHTML = ''; // Clear the timeline
 
-    data.forEach(movie => {
-        const listItem = document.createElement('li');
-        listItem.className = 'movie';
-        listItem.setAttribute('data-date', movie.releaseDate);
+    if (chronologicalOrder) {
+        // Display movies in chronological order
+        data.forEach(movie => {
+            const listItem = document.createElement('li');
+            listItem.className = 'movie';
+            listItem.setAttribute('data-date', movie.releaseDate);
 
-        const title = document.createElement('h3');
-        title.textContent = movie.name;
+            const title = document.createElement('h3');
+            title.textContent = movie.name;
 
-        const summary = document.createElement('p');
-        summary.textContent = movie.summary;
+            const summary = document.createElement('p');
+            summary.textContent = movie.summary;
 
-        listItem.appendChild(title);
-        listItem.appendChild(summary);
+            listItem.appendChild(title);
+            listItem.appendChild(summary);
 
-        timeline.appendChild(listItem);
-    });
+            timeline.appendChild(listItem);
+        });
+    } else {
+        // Display movies in sorted order by release date
+        sortMoviesByReleaseDate();
+    }
+}
 
-    // Automatically sort by release date after generating items
-    sortMoviesByReleaseDate();
+// Function to toggle between chronological and sorted order
+function toggleDisplayMode() {
+    chronologicalOrder = !chronologicalOrder;
+    generateTimelineItems(moviesData); // Re-generate timeline based on the new mode
 }
 
 // Function to sort movies by release date
@@ -76,6 +89,7 @@ function sortMoviesByReleaseDate() {
         timeline.appendChild(movie);
     });
 }
+
 // Function to sort movies alphabetically by title (A-Z)
 function sortMoviesByTitleAZ() {
     const timeline = document.querySelector('.timeline');
@@ -112,12 +126,17 @@ function sortMoviesByTitleZA() {
     });
 }
 
-// Add event listeners to the sorting buttons
+// Call the function to generate timeline items in chronological order by default
+generateTimelineItems(moviesData);
+
+// Add event listeners to the buttons
 const sortReleaseDateButton = document.getElementById('sort-release-date');
+const chronologicalOrderButton = document.getElementById('sort-chronological');
 const sortTitleAZButton = document.getElementById('sort-title-az');
 const sortTitleZAButton = document.getElementById('sort-title-za');
 
 sortReleaseDateButton.addEventListener('click', sortMoviesByReleaseDate);
+chronologicalOrderButton.addEventListener('click', toggleDisplayMode);
 sortTitleAZButton.addEventListener('click', sortMoviesByTitleAZ);
 sortTitleZAButton.addEventListener('click', sortMoviesByTitleZA);
 
