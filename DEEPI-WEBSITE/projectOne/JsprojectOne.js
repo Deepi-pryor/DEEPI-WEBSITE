@@ -34,11 +34,7 @@ const moviesData = [
     { name: "Guardians of the Galaxy Vol. 3", releaseDate: "2023", summary: "The Guardians reunite for another cosmic adventure as they face personal and galactic threats." }
 ];
 
-// Flag to keep track of the current display mode
-// Flag to keep track of the current sorting mode
-let currentSortingMode = "chronological";
-
-// Function to generate timeline items based on the sorting mode
+/// Function to generate timeline items based on the sorting mode
 function generateTimelineItems(data) {
     const timeline = document.querySelector('.timeline');
     timeline.innerHTML = ''; // Clear the timeline
@@ -63,73 +59,106 @@ function generateTimelineItems(data) {
         });
     } else if (currentSortingMode === "release-date") {
         // Sort and display movies by release date
-        sortMoviesByReleaseDate();
+        sortMoviesByReleaseDate(data); // Pass data to the sorting function
     } else if (currentSortingMode === "title-az") {
         // Sort and display movies alphabetically by title (A-Z)
-        sortMoviesByTitleAZ();
+        sortMoviesByTitleAZ(data); // Pass data to the sorting function
     } else if (currentSortingMode === "title-za") {
         // Sort and display movies alphabetically by title (Z-A)
-        sortMoviesByTitleZA();
+        sortMoviesByTitleZA(data); // Pass data to the sorting function
     }
 }
 
-// Function to toggle between sorting modes
-function toggleSortingMode(mode) {
-    currentSortingMode = mode;
-    generateTimelineItems(moviesData); // Re-generate timeline based on the new mode
-}
-
 // Function to sort movies by release date
-function sortMoviesByReleaseDate() {
+function sortMoviesByReleaseDate(data) {
     const timeline = document.querySelector('.timeline');
-    const movies = Array.from(timeline.querySelectorAll('.movie'));
 
-    movies.sort((a, b) => {
-        const dateA = a.getAttribute('data-date');
-        const dateB = b.getAttribute('data-date');
+    // Sort the data by release date
+    data.sort((a, b) => {
+        const dateA = a.releaseDate;
+        const dateB = b.releaseDate;
         return dateA.localeCompare(dateB);
     });
 
     // Clear the timeline and append sorted movies
     timeline.innerHTML = '';
-    movies.forEach(movie => {
-        timeline.appendChild(movie);
+    data.forEach(movie => {
+        const listItem = document.createElement('li');
+        listItem.className = 'movie';
+        listItem.setAttribute('data-date', movie.releaseDate);
+
+        const title = document.createElement('h3');
+        title.textContent = movie.name;
+
+        const summary = document.createElement('p');
+        summary.textContent = movie.summary;
+
+        listItem.appendChild(title);
+        listItem.appendChild(summary);
+
+        timeline.appendChild(listItem);
     });
 }
 
 // Function to sort movies alphabetically by title (A-Z)
-function sortMoviesByTitleAZ() {
+function sortMoviesByTitleAZ(data) {
     const timeline = document.querySelector('.timeline');
-    const movies = Array.from(timeline.querySelectorAll('.movie'));
 
-    movies.sort((a, b) => {
-        const titleA = a.querySelector('h3').textContent;
-        const titleB = b.querySelector('h3').textContent;
+    // Sort the data by title (A-Z)
+    data.sort((a, b) => {
+        const titleA = a.name;
+        const titleB = b.name;
         return titleA.localeCompare(titleB);
     });
 
     // Clear the timeline and append sorted movies
     timeline.innerHTML = '';
-    movies.forEach(movie => {
-        timeline.appendChild(movie);
+    data.forEach(movie => {
+        const listItem = document.createElement('li');
+        listItem.className = 'movie';
+        listItem.setAttribute('data-date', movie.releaseDate);
+
+        const title = document.createElement('h3');
+        title.textContent = movie.name;
+
+        const summary = document.createElement('p');
+        summary.textContent = movie.summary;
+
+        listItem.appendChild(title);
+        listItem.appendChild(summary);
+
+        timeline.appendChild(listItem);
     });
 }
 
 // Function to sort movies alphabetically by title (Z-A)
-function sortMoviesByTitleZA() {
+function sortMoviesByTitleZA(data) {
     const timeline = document.querySelector('.timeline');
-    const movies = Array.from(timeline.querySelectorAll('.movie'));
 
-    movies.sort((a, b) => {
-        const titleA = a.querySelector('h3').textContent;
-        const titleB = b.querySelector('h3').textContent;
+    // Sort the data by title (Z-A)
+    data.sort((a, b) => {
+        const titleA = a.name;
+        const titleB = b.name;
         return titleB.localeCompare(titleA);
     });
 
     // Clear the timeline and append sorted movies
     timeline.innerHTML = '';
-    movies.forEach(movie => {
-        timeline.appendChild(movie);
+    data.forEach(movie => {
+        const listItem = document.createElement('li');
+        listItem.className = 'movie';
+        listItem.setAttribute('data-date', movie.releaseDate);
+
+        const title = document.createElement('h3');
+        title.textContent = movie.name;
+
+        const summary = document.createElement('p');
+        summary.textContent = movie.summary;
+
+        listItem.appendChild(title);
+        listItem.appendChild(summary);
+
+        timeline.appendChild(listItem);
     });
 }
 
@@ -147,5 +176,8 @@ chronologicalOrderButton.addEventListener('click', () => toggleSortingMode("chro
 sortTitleAZButton.addEventListener('click', () => toggleSortingMode("title-az"));
 sortTitleZAButton.addEventListener('click', () => toggleSortingMode("title-za"));
 
-// Call the function to generate timeline items
-generateTimelineItems(moviesData);
+// Function to toggle between sorting modes
+function toggleSortingMode(mode) {
+    currentSortingMode = mode;
+    generateTimelineItems([...moviesData]); // Pass a copy of the data to avoid modifying the original
+}
