@@ -34,14 +34,6 @@ const moviesData = [
     { name: "Guardians of the Galaxy Vol. 3", releaseDate: "2023", summary: "The Guardians reunite for another cosmic adventure as they face personal and galactic threats." }
 ];
 
-// Data with movie summaries
-const moviesData = [
-    { name: "Captain America: The First Avenger", releaseDate: "2011", summary: "Steve Rogers, a frail soldier, becomes Captain America and battles the Red Skull during World War II." },
-    { name: "Captain Marvel", releaseDate: "2019", summary: "Carol Danvers, aka Captain Marvel, discovers her past and joins the fight against the Skrull invasion." },
-    { name: "Iron Man", releaseDate: "2008", summary: "Tony Stark, a genius inventor, builds a suit of armor to become the superhero Iron Man and must confront his own technology's destructive potential." },
-    // ... (other movie data)
-];
-
 // Function to generate timeline items
 function generateTimelineItems(data) {
     const timeline = document.querySelector('.timeline');
