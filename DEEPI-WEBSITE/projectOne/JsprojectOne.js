@@ -35,14 +35,15 @@ const moviesData = [
 ];
 
 // Flag to keep track of the current display mode
-let chronologicalOrder = true;
+// Flag to keep track of the current sorting mode
+let currentSortingMode = "chronological";
 
-// Function to generate timeline items based on the display mode
+// Function to generate timeline items based on the sorting mode
 function generateTimelineItems(data) {
     const timeline = document.querySelector('.timeline');
     timeline.innerHTML = ''; // Clear the timeline
 
-    if (chronologicalOrder) {
+    if (currentSortingMode === "chronological") {
         // Display movies in chronological order
         data.forEach(movie => {
             const listItem = document.createElement('li');
@@ -60,15 +61,21 @@ function generateTimelineItems(data) {
 
             timeline.appendChild(listItem);
         });
-    } else {
-        // Display movies in sorted order by release date
+    } else if (currentSortingMode === "release-date") {
+        // Sort and display movies by release date
         sortMoviesByReleaseDate();
+    } else if (currentSortingMode === "title-az") {
+        // Sort and display movies alphabetically by title (A-Z)
+        sortMoviesByTitleAZ();
+    } else if (currentSortingMode === "title-za") {
+        // Sort and display movies alphabetically by title (Z-A)
+        sortMoviesByTitleZA();
     }
 }
 
-// Function to toggle between chronological and sorted order
-function toggleDisplayMode() {
-    chronologicalOrder = !chronologicalOrder;
+// Function to toggle between sorting modes
+function toggleSortingMode(mode) {
+    currentSortingMode = mode;
     generateTimelineItems(moviesData); // Re-generate timeline based on the new mode
 }
 
@@ -135,10 +142,10 @@ const chronologicalOrderButton = document.getElementById('sort-chronological');
 const sortTitleAZButton = document.getElementById('sort-title-az');
 const sortTitleZAButton = document.getElementById('sort-title-za');
 
-sortReleaseDateButton.addEventListener('click', sortMoviesByReleaseDate);
-chronologicalOrderButton.addEventListener('click', toggleDisplayMode);
-sortTitleAZButton.addEventListener('click', sortMoviesByTitleAZ);
-sortTitleZAButton.addEventListener('click', sortMoviesByTitleZA);
+sortReleaseDateButton.addEventListener('click', () => toggleSortingMode("release-date"));
+chronologicalOrderButton.addEventListener('click', () => toggleSortingMode("chronological"));
+sortTitleAZButton.addEventListener('click', () => toggleSortingMode("title-az"));
+sortTitleZAButton.addEventListener('click', () => toggleSortingMode("title-za"));
 
 // Call the function to generate timeline items
 generateTimelineItems(moviesData);
