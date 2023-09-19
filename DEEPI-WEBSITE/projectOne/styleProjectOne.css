@@ -158,44 +158,56 @@ h1 {
 }
 
 
+
+
+
+
 #sort-release-date, #sort-title {
-  transition-duration: 0.4s;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
 }
 
 #sort-release-date:hover, #sort-title:hover {
-  background-color: #4CAF50; /* Green */
+  background-color: #008CBA;
   color: white;
 }
 
 
 #sort-chronological, #sort-title {
-  transition-duration: 0.4s;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
 }
 
 #sort-chronological:hover, #sort-title:hover {
-  background-color: #4CAF50; /* Green */
+  background-color: #008CBA;
   color: white;
 }
 
 
 
 #sort-title-az, #sort-title {
-  transition-duration: 0.4s;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
 }
 
 #sort-title-az:hover, #sort-title:hover {
-  background-color: #4CAF50; /* Green */
+  background-color: #008CBA;
   color: white;
 }
 
 
 
 #sort-title-za, #sort-title {
-  transition-duration: 0.4s;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
 }
 
 #sort-title-za:hover, #sort-title:hover {
-  background-color: #4CAF50; /* Green */
+  background-color: #008CBA;
   color: white;
 }
 
