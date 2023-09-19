@@ -166,3 +166,38 @@ h1 {
   background-color: #4CAF50; /* Green */
   color: white;
 }
+
+
+#sort-chronological, #sort-title {
+  transition-duration: 0.4s;
+}
+
+#sort-chronological:hover, #sort-title:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+
+
+#sort-title-az, #sort-title {
+  transition-duration: 0.4s;
+}
+
+#sort-title-az:hover, #sort-title:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+
+
+#sort-title-za, #sort-title {
+  transition-duration: 0.4s;
+}
+
+#sort-title-za:hover, #sort-title:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+
+
